@@ -23,4 +23,14 @@ public class Salom {
         postRepository.save(post);
         return "Saqlandi";
     }
+    @DeleteMapping("/api/delete")
+    public String delete(){
+        postRepository.deleteAll();
+        return "O'chirildi";
+    }
+    @DeleteMapping("/api/delete/{id}")
+    public String deleteOne(@PathVariable Integer id){
+        postRepository.deleteById(id);
+        return "O'chirildi";
+    }
 }
