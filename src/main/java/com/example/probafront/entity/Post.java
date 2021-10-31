@@ -17,4 +17,5 @@ public class Post {
     @Id
     private Integer id;
     private String postt;
+    private String what;
 }
