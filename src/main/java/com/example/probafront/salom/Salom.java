@@ -20,8 +20,12 @@ public class Salom {
 
     @PostMapping("/api/post")
     public String post(@RequestBody Post post){
-        postRepository.save(post);
-        return "Saqlandi";
+        if(postRepository.existsByPosttNotAndWhat(post.getPostt(),post.getWhat())){
+            return "Bor";
+        }else {
+            return "Yo'q";
+        }
+
     }
     @DeleteMapping("/api/delete")
     public String delete(){
