@@ -20,12 +20,16 @@ public class Attachment {
     @Id
     @GeneratedValue
     private UUID id;
-    private String name;
+    private String originalfilename;
     private String content_type;
+    private String savefilename;
 
-    public Attachment(String name, String content_type) {
-        this.name = name;
+    public Attachment(String originalfilename, String content_type, String savefilename) {
+        this.originalfilename = originalfilename;
         this.content_type = content_type;
+        this.savefilename = savefilename;
     }
+
+
 }
 
